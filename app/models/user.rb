@@ -9,4 +9,5 @@ class User < ApplicationRecord
             message: "must be an email" }
 	
   has_many :posts
+  has_many :comments
 end
