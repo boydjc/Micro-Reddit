@@ -1,0 +1,56 @@
+#mainContent {
+	border: 2px dashed red;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#navBar {
+	flex: 1;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+
+#navBar h1 {
+	padding-bottom: 10px;
+}
+
+#navBar p {
+	font-size: 1.4rem;
+}
+
+#postCont {
+	flex: 6;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#subTitle {
+	border: 2px dashed black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	padding: 10px;
+}
+
+#postContent {
+	display: flex; 
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+}
+
+.post {
+	border: 2px dotted blue;
+	display: grid;
+	grid-template-rows: 1fr 2fr;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+}

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 	
   root to: "main#index"
 
-  get "/users", to: "users#index"
+  # route for the different subreddits
+  get "/:name", to: "main#index", as: "main"
 end
