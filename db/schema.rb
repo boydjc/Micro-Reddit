@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_26_132827) do
+ActiveRecord::Schema.define(version: 2022_03_27_152032) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -28,7 +28,16 @@ ActiveRecord::Schema.define(version: 2022_03_26_132827) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.integer "subreddit_id", null: false
+    t.index ["subreddit_id"], name: "index_posts_on_subreddit_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "subreddits", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,5 +49,6 @@ ActiveRecord::Schema.define(version: 2022_03_26_132827) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "posts", "subreddits"
   add_foreign_key "posts", "users"
 end
