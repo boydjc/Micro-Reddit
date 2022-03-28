@@ -1,0 +1,6 @@
+<div id="navBar">
+	<h1>Categories</h1>
+	<% @subreddits.each do |subreddit| %>
+		<p><%= link_to subreddit.name, main_path(subreddit.name) %></p>
+	<% end %>
+</div>

@@ -1,1 +1,21 @@
-<h1>This is the main index page!</h1>
+<%= render "header" %>
+
+<div id="mainContent">
+	<%= render "navbar" %>
+	<div id="postCont">
+		<div id="subTitle">
+			<h2><%= @selectedSubreddit.name %></h2>
+			<p><%= @selectedSubreddit.description %></p>
+		</div>
+		<div id="postContent">
+			<% @selectedSubreddit.posts.each do |post| %>
+				<div class="post">
+					<h2><%= post.title %></h2>
+					<p><%= post.body %></p>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<%= render "footer" %>
